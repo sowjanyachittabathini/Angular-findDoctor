@@ -1,0 +1,61 @@
+@import 'variables.scss';
+.bsc-wrapper {
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.main-content {
+    max-width: 100%;
+    // background-color: $color-blue;
+    // background: linear-gradient($color-blue, $color-blue-medium);
+    // background: -webkit-linear-gradient($color-blue, $color-blue-medium);
+    // background: -moz-linear-gradient($color-blue, $color-blue-medium);
+    // background: -o-linear-gradient($color-blue, $color-blue-medium);
+    // background: -ms-linear-gradient($color-blue, $color-blue-medium);
+}
+.bsc-content-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: $color-blue;
+    background: linear-gradient($color-blue, $color-blue-medium);
+    background: -webkit-linear-gradient($color-blue, $color-blue-medium);
+    background: -moz-linear-gradient($color-blue, $color-blue-medium);
+    background: -o-linear-gradient($color-blue, $color-blue-medium);
+    background: -ms-linear-gradient($color-blue, $color-blue-medium);
+}
+
+// accessability
+.skipLink {
+    // display: none;
+    cursor: pointer;
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    width: 12em;
+    color: $color-black;
+    background: $color-white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    text-align: center;
+}
+.skipLink:focus {
+    // display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    top: 0px;
+    left: 45%;
+    color: $color-black;
+    background: $color-white;
+    outline: 1px solid $color-black;
+}
+.skipLink:visited {
+    // display: block;
+    color: $color-black;
+    background: $color-white;
+}
+#main:focus {
+    outline: none;
+}

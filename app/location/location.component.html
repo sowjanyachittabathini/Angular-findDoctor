@@ -1,0 +1,56 @@
+<div class="location-container">
+  <div class="app-location row">
+    <div class="wrapper-location col-sm-12 col-md-10 col-lg-7">
+      <div *ngIf="showSearch" class="app-location-search">
+        <h1 class="title">{{ 'location_heading' | langtranslate}}</h1>
+        <div class="location-input" name="search">
+          <span *ngIf="invalidLocationMsg">
+            <div class="error-msg">
+              No results found for this location, you may change location and try again. To find providers outside of the U.S. visit the
+              <a href="{{absoluteURLs.BLUECARD_WORLDWIDE}}" target="_blank" style="cursor: pointer;text-decoration:none;">Blue Card Worldwide network</a>.
+            </div>
+            <br>
+          </span>
+          <span *ngIf="outside_us_healthcare">
+            <div class="error-msg">
+              The location entered is outside of California. To locate providers outside of California, please search the
+              <a href="{{absoluteURLs.HEALTH_CARE_OUTSIDE}}" target="_blank" style="cursor: pointer;text-decoration:none;"> HealthCare Anywhere </a>website. Please note that only emergency services will be coverd by your plan.
+            </div>
+            <br>
+          </span>
+          <span *ngIf="outside_us_visioncare">
+            <div class="error-msg">
+              The selection entered is outside of California. To locate providers outside of California, please search the
+              <a href="{{absoluteURLs.HEALTH_CARE_OUTSIDE}}" target="_blank" style="cursor: pointer;text-decoration:none;"> Discount Vision Program </a> site.
+              For licensed eye care professionals outside of California, please search the
+              <a href="{{absoluteURLs.MES_VISION_CARE}}" target="_blank" style="cursor: pointer;text-decoration:none;"> MES Vision Network Directory </a>
+            </div>
+            <br>
+          </span>
+          <span *ngIf="networkErrMsg">
+            <div class="error-msg">
+              Unable to complete request. Please try again
+            </div>
+            <br>
+          </span>
+          <span *ngIf="mes_vision_link">
+            <div>
+              <a target="blank" href="{{absoluteURLs.MES_VISION_CARE}}">MES Vision Network Directory </a> &nbsp;
+              <a target="blank" href="{{absoluteURLs.MES_DISCOUNT_PROVIDER}}"> Discount Provider Network</a>
+            </div>
+            <br>
+          </span>
+          <app-google-autocomplete (inputSearchValue)="selectedLocation($event)"></app-google-autocomplete>
+          <div class="hiddenText" *ngIf="isNoMatch">Sorry, we could not find a match</div>
+      </div>
+      <div class="current-location">
+        <span class="icon-location">
+          <app-svg-icon id="icon-pin"></app-svg-icon>
+        </span>
+        <a href="javascript:void(0)" (click)="setCurrentLocation()">{{ 'current_location' | langtranslate}}</a>
+        <a href="{{absoluteURLs.BLUECARD_WORLDWIDE}}" target="_blank" href="javascript:void(0)" style="margin-left:15px">Outside USA location</a>
+      </div>
+      <button role="button" (click)="navigateToNextPage(locationTemplate)" [disabled]="(!locationSelected) ? true : false" class="btn btn primary app-location-button">{{ 'continue' | langtranslate}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,222 @@
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    @include font-regular;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.01em;
+}
+
+@mixin body-heading($size, $line, $size_desk, $line_desk, $spacing:0.01em) {
+    font-family: 'Century Gothic', $font-regular;
+    font-weight: normal;
+
+    letter-spacing: $spacing;
+    font-size: $size+px;
+    line-height: $line+px;
+
+    @include media-breakpoint-up(large) {
+        font-size: $size_desk+px;
+        line-height: $line_desk+px;
+    }
+    &.white{
+        color: $color-white;
+    }
+}
+
+@mixin body-text($size, $line, $spacing:0.01em) {
+    letter-spacing: $spacing;
+    font-size: $size+px;
+    line-height: $line+px;
+}
+
+.title-large {
+    @include body-heading(42, 56, 64, 70);
+}
+
+.heading-main {
+    @include body-heading(30, 42, 40, 52);
+    color: $color-blue;
+}
+
+.heading-sub {
+    @include body-heading(24, 34, 28, 38);
+}
+
+.heading-section {
+    @include body-heading(18, 24, 24, 34);
+}
+
+.heading-section-alt {
+    @include body-heading(18, 24, 24, 34);
+    font-family: 'Century Gothic', $font-bold;
+    font-weight: bold;
+}
+
+.body-heading {
+    font-family: 'Century Gothic', $font-bold;
+    @include body-text(16, 24);
+    font-weight: bold;
+}
+
+.body-regular {
+    @include font-regular;
+    @include body-text(16, 24);
+}
+.body-bold {
+    @include font-semi;
+    @include body-text(16, 24);
+}
+
+body {
+    @extend .body-regular;
+    color: $color-grey-dark;
+}
+
+@mixin link-style($color-regular, $color-hover, $is_imp: false) {
+    @if $is_imp == false {
+      color: $color-regular;
+    } @else {
+      color: $color-regular  !important;
+    };
+
+    &:hover,  &:active  {
+      @if $is_imp == false {
+        color: $color-hover;
+      } @else {
+        color: $color-hover  !important;
+      };
+    }
+}
+@mixin link-style-default() {
+    @include link-style($color-navy, $color-blue-steel);
+}
+@mixin link-style-light() {
+    @include link-style($color-white, $color-grey-blue);
+}
+
+a {
+    @include font-regular;
+    @include body-text(16, 24);
+    text-decoration: underline;
+
+    @include link-style-default();
+
+    &.white {
+       @include link-style-light();
+    }
+
+    // appear as regular text
+    &.regular {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover, &:active{
+            color: inherit;
+        }
+    }
+}
+
+.body-lg {
+    @include font-regular;
+    @include body-text(18, 30);
+}
+
+.body-lg-alt {
+    @include font-semi;
+    @include body-text(18, 30);
+}
+
+.body-sm {
+    @include font-regular;
+    @include body-text(13, 18);
+}
+
+.body-sm-alt {
+    @include font-semi;
+    @include body-text(13, 18);
+}
+
+.form-group {
+    label {
+        //TODO: needs work - see inputs
+        @include font-semi;
+        @include body-text(12, 16, 0.1em);
+        text-transform: uppercase;
+    }
+    &.white{
+        label{
+            color:white;
+        }
+    }
+}
+
+.heading-label {
+    @include font-semi;
+    @include body-text(12, 16, 0.1em);
+    color: $color-navy;
+    &.white{
+        color:$color-white;
+    }
+}
+
+.label-lg{
+    @include font-extra;
+    @include body-text(14, 20, 0.1em);
+    text-transform: uppercase;
+}
+
+.caption {
+    @include font-regular;
+    @include body-text(12, 16);
+    a{
+        @include body-text(12, 16);
+    }
+}
+
+sup{
+    top:-.6em;
+    font-size:55%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include header-font-light;
+}
+
+.typography{
+    .tabs-content{
+        .tabs-panel{
+            &#darkTheme{
+                label{
+                    color:$color-white;
+                }
+                background-color:$color-navy;
+            }
+        }
+    }
+    &.sg{
+        &.testing{
+            #main{
+                .sg-side-content{
+                    .tabs-content{
+                        .tabs-panel{
+                            >.row{
+                                margin:50px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media print {
+    // Disable Foundation feature that displays href when printing
+    a[href]:after {
+        content: normal;
+    }
+}

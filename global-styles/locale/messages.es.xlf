@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="es">
+    <body>
+      <trans-unit id="7c6a1beccdb4ab1282173a1c00e20d23a985b763" datatype="html">
+        <source>Shop Plans</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      <target state="new">Shop Plans</target></trans-unit>
+    </body>
+  </file>
+</xliff>

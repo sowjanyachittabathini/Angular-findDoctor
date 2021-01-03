@@ -1,0 +1,54 @@
+/* Heading margin
+   NOTE: These aren't included in the typography heading classes so that
+   they don't interfere with what has already be developed.
+   Generally if you use the given heading you should also add the associated margin class
+*/
+
+.heading-main-margin {
+    margin-bottom: 30px;
+}
+
+.heading-sub-margin {
+    margin-bottom: 25px;
+}
+
+.heading-section-margin {
+    margin-bottom: 20px;
+}
+
+.body-heading-margin {
+    margin-bottom: 20px;
+}
+
+.body-lg-margin {
+    margin-bottom: 27px;
+}
+
+.body-regular-margin {
+    margin-bottom: 20px;
+}
+
+.body-small-margin {
+    margin-bottom: 15px;
+}
+
+.caption-margin {
+    margin-bottom: 12px;
+}
+
+
+@include media-breakpoint-up(large up) {
+
+    .heading-main-margin {
+        margin-bottom: 35px;
+    }
+
+    .heading-sub-margin {
+        margin-bottom: 25px;
+    }
+
+    .heading-section-margin {
+        margin-bottom: 30px;
+    }
+}
+

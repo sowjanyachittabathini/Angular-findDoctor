@@ -1,0 +1,33 @@
+$font-regular: "ProximaRegular";
+$font-light: "ProximaLight";
+$font-semi: "ProximaSemiBold";
+$font-bold: "ProximaBold";
+$font-extra: "ProximaExtraBold";
+$header-font-light: "Century Gothic", "ProximaRegular";
+
+
+@mixin font-regular {
+    font-family: $font-regular;
+    font-weight: normal;
+}
+@mixin font-light {
+    font-family: $font-light;
+    font-weight: normal;
+}
+@mixin font-semi {
+    font-family: $font-semi;
+    font-weight: normal;
+}
+@mixin font-bold {
+    font-family: $font-bold;
+    font-weight: normal;
+}
+@mixin font-extra {
+    font-family: $font-extra;
+    font-weight: normal;
+}
+
+@mixin header-font-light {
+    font-family: $header-font-light;
+    font-weight: normal;
+}

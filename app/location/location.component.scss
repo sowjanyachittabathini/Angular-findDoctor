@@ -1,0 +1,205 @@
+@import "variables.scss";
+.location-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.app-location {
+  padding: 11% 4%;
+  margin: 0 auto;
+  .wrapper-location {
+    background-color: $color-white;
+    margin: 1em auto;
+    border-radius: 3px;
+    padding: 2em 1em;
+  }
+  .location-input {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .form-group {
+    margin-bottom: 0px;
+  }
+  .location-search-input[placeholder="Enter Address"]::-webkit-input-placeholder {
+    color: $color-black;
+    font-family: ProximaRegular;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    font-size: 16px;
+  }
+  .location-search-input {
+    // background-image: url("../../assets/images/search.svg");
+    padding-left: 50px !important;
+    height: 52px !important;
+    background-position: left 13px center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    margin-bottom: 0;
+    border: 1px solid $color-grey-medium;
+    border-radius: 5px;
+    width: 91%;
+    margin: 0 auto;
+  }
+  .location-search-input:focus {
+    box-shadow: none;
+  }
+  .current-location {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .icon-location {
+    svg {
+      fill: $color-blue;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  .plan-disclaimer,
+  .app-location-search {
+    display: block;
+  }
+  .plan-disclaimer-button {
+    text-align: center;
+    button {
+      border-radius: 49px;
+      min-width: 145px;
+      min-height: 60px;
+      font-size: 18px;
+      line-height: 20px;
+      padding: 18px 30px;
+      font-weight: bold;
+      margin: 0 16px 15px 0;
+    }
+    button:nth-child(even) {
+      margin-bottom: 17px;
+    }
+  }
+
+  .app-location-button {
+    background-color: $color-blue;
+    border-color: $color-blue;
+    padding: 13px 27.5px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 17px;
+    font-weight: bold;
+  }
+  .hiddenText {
+    width: 91%;
+    margin: 0 auto;
+    border-radius: 0px;
+    border: 1px solid $color-black;
+    padding: 10px 0 10px 15px;
+    text-align: left;
+    position: relative;
+    top: -3px;
+    background: $color-white;
+    border-top-color: $color-blue;
+  }
+  .error-msg {
+    font-size: 15px;
+    font-family: Arial;
+    color: $color-red;
+    padding: 6px 0px 0px 9px;
+    width: 92%;
+  }
+  .auto-complete-search {
+    width: 91.15%;
+  }
+  .show > .btn-outline-primary.dropdown-toggle {
+    background-color: $color-white;
+    color: $color-black;
+  }
+  bsc-google-autocomplete {
+    .btn:not([disabled]):not(.disabled) {
+      cursor: auto;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .app-location {
+    padding: 7% 6.3%;
+    .wrapper-location {
+      margin: 5.3em auto;
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    .location-search-input {
+      width: 46.7%;
+    }
+    .hiddenText {
+      width: 46.7%;
+    }
+    .auto-complete-search {
+      width: 46.7%;
+    }
+    .error-msg {
+      width: 47%;
+      margin-left: 26%;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .app-location {
+    padding: 1.8em 5.48em;
+    .wrapper-location {
+      padding: 3.4em 3.5em 3.3em 3.5em;
+      margin: 6.2em auto;
+      max-width: 83.33333333%;
+      flex: 0 0 83.33333333%;
+    }
+    .app-location-button {
+      margin-bottom: 22px;
+    }
+    .location-search-input {
+      margin-bottom: 0;
+      width: 50.6%;
+    }
+    .plan-disclaimer-button {
+      padding-top: 14px;
+      button {
+        margin-left: 12px;
+      }
+      button:nth-child(even) {
+        margin-left: 0px;
+      }
+    }
+    .hiddenText {
+      width: 50.6%;
+    }
+    .auto-complete-search {
+      width: 50.6%;
+    }
+    .error-msg {
+      width: 51%;
+      margin-left: 24%;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .location-container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .app-location {
+    .wrapper-location {
+      max-width: 1600px;
+      padding: 3.5em 3.5em 3.2em 3.5em;
+      flex: 0 0 58.33%;
+      max-width: 58.33%;
+    }
+    .location-search-input {
+      width: 69.23%;
+    }
+    .hiddenText {
+      width: 70.7%;
+    }
+    .auto-complete-search {
+      width: 70.7%;
+    }
+    .error-msg {
+      width: 72%;
+      margin-left: 14%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+$fonts: ('ProximaExtraBold', 'proximanova-extrabold'),
+    ('ProximaBold', 'proximanova-bold'),
+    ('ProximaSemiBold', 'proximanova-semibold'),
+    ('ProximaRegular', 'proximanova-regular'),
+    ('ProximaLight', 'proximanova-light');
+
+@each $font in $fonts {
+
+    $name: nth($font, 1);
+    $prefix: nth($font, 2)+'-webfont';
+
+    @font-face {
+        font-family: '#{$name}';
+        src: url('#{$font-base-path}#{$prefix}.eot');
+        src: url('#{$font-base-path}#{$prefix}.eot?#iefix') format('embedded-opentype'),
+        url('#{$font-base-path}#{$prefix}.woff') format('woff'),
+        url('#{$font-base-path}#{$prefix}.ttf') format('truetype'),
+        url('#{$font-base-path}#{$prefix}.svg##{$name}') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+}

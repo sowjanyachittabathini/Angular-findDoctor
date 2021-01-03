@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'variables.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'global-styles';
+@import './fonts/_fonts';
+//Jeff: Please read!
+//As of now, we copied exactly same stylings from style-guide, and declared above.
+//However, once we figure out the pubilsh of styling guide project, we will remove above part, instead, we will do similiarly like below just like how we import the bootstrap scss from node_modules
+//   @import 'node_modules/style-guide/global.scss'
+//
+//  Then, with just one line, we got all stylings from style guide and fonts too!
+//   After that, we will orgnize global stylings for FAD project by importing each of them
+// such as 
+// @import "./styles/button.scss"
+// @import ....
+//As of now, we can define some global stylings for FAD application in below
+// .centered {
+//     text-align: center;
+// }
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+button.btn-sm {
+    min-width: 100px;
+    min-height: 36px;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 8px 20px;
+}
+.modal-body {
+    h2 {
+        font-family: Century Gothic,ProximaRegular;
+        font-weight: 400;
+        letter-spacing: .01em;
+        font-size: 30px;
+        line-height: 42px;
+        color: $color-blue;
+        text-align: center;
+    }
+}
+.btn,
+.btn-primary {
+    border-radius: 36px;
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-blue;
+    border-color: $color-blue;
+    text-align: center;
+    border-style: none;
+    &:hover {
+        background-color:$color-blue-steel;
+        border-color: $color-blue-steel;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+@media screen and (min-width: 320px){
+    .modal-dialog{ 
+        max-width: 300px; 
+    }
+    .fep-directory .modal-body {
+        p {
+            text-align: center;
+            .button-link {
+                a {
+                    white-space: normal;
+                    color: $color-white;
+                    font-family: ProximaSemiBold;
+                    font-weight: 400;
+                    letter-spacing: .01em;
+                    padding: 15px 25px;
+                    border-radius: 38px;
+                    line-height: 18px;
+                    margin-bottom: 16px;
+                    min-width: 100px;
+                    min-height: 50px;
+                    text-decoration: none;            
+                }                
+            }
+            .button-link:first-child a {
+                margin-top: 25px;
+            }
+        }
+        
+    }
+}
+@media screen and (min-width: 640px){
+    .modal-dialog{ 
+        max-width: 514px; 
+    }    
+}
+@media screen and (min-width: 1024px){
+    .modal-dialog{  
+        max-width: 514px;
+    }
+    .modal-body {
+        h2 {
+            font-size: 40px;
+            line-height: 52px;
+        }
+    }
+}
+@media screen and (min-width: 1440px){
+    .modal-dialog{ 
+        max-width: 514px;
+    }
+}

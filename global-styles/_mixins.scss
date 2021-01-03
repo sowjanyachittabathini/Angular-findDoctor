@@ -1,0 +1,14 @@
+@mixin grad($from, $to) {
+  background-color: $from;
+  background: -webkit-linear-gradient($from, $to); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($from, $to); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($from, $to); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($from, $to); /* Standard syntax */
+}
+
+@mixin grad-top-bottom($from, $fromPercent, $to, $toPercent ) {
+  background: $from; /* Old browsers */
+  background: -moz-linear-gradient(top, $from $fromPercent, $to $toPercent); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $from $fromPercent,$to $toPercent); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $from $fromPercent,$to $toPercent); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}

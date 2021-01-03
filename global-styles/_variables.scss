@@ -1,0 +1,62 @@
+//colors
+$color-black: #000;
+$color-white: #fff;
+$color-white-off: #f4f4f4;
+$color-grey-light: #eeeeee;
+$color-grey: #eaeaea;
+$color-grey-medium-light: #acacac;
+$color-grey-blue: #8fadc1;
+$color-grey-medium: #767676;
+$color-grey-dark: #25282a;
+$color-blue-light: #e6f4f9;
+$color-blue-medium: #26a5df;
+$color-blue: #0082ca;
+$color-blue-steel: #0068a1;
+$color-navy: #014d83;
+$color-highlight: #e6f4f9;
+$color-dropdown: $color-grey-medium;
+$color-dropdown-light: $color-grey-medium-light;
+$color-red: #c6050d;
+$color-red-light: #f7ecec;
+$color-green: #017e3e;
+$color-green-light: #cfffe6;
+$color-terracotta: #c15700;
+$color-cyan-dark: #13ae5f;
+$color-cyan-soft: #55e6bf;
+$color-vivid-orange: #ff7e14;
+$color-soft-orange: #fbc15d;
+$color-light-grey:$color-grey-medium-light;
+$color-shadow: rgba(10, 10, 10, 0.1);
+$color-tooltip: rgba(10, 10, 10, 0.35);
+$color-error: $color-red;
+$color-error-bg: $color-red-light;
+$color-success: $color-green;
+$color-success-bg: $color-green-light;
+$color-btn: $color-blue;
+$color-btn-hover: $color-blue-steel;
+$color-btn-inverted: $color-blue-steel;
+$font-base-path: '/assets/fonts/';
+$image-base-path: '/assets/images/';
+$grid-breakpoints: ( xs: 0, sm: 320px, md: 640px, lg: 1024px, xl: 1440px);
+$container-max-widths: ( sm: 320px, md: 640px, lg: 1024px, xl: 1440px);
+$media-widths: ( mobile: map-get($container-max-widths, 'sm'), tablet: map-get($container-max-widths, 'md'), desktop: map-get($container-max-widths, 'lg'), large-desktop: map-get($container-max-widths, 'xl'));
+// Respond-To Mixin
+@mixin down-to($breakpoint) {
+    @if map-has-key( $media-widths, $breakpoint) {
+        $value: map-get( $media-widths, $breakpoint);
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
+
+@mixin up-to($breakpoint) {
+    @if map-has-key($media-widths, $breakpoint) {
+        $value: map-get($media-widths, $breakpoint);
+        @media screen and (max-width: $value - 1) {
+            @content;
+        }
+    }
+    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}

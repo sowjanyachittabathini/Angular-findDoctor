@@ -1,0 +1,272 @@
+@import 'mixins';
+body {
+    background: $color-white-off;
+    .pac-item {
+        padding: 10px;
+        font-size: 15px;
+        color: #212529;
+        font-family: ProximaRegular;
+        cursor: pointer;
+    }
+    .pac-icon {
+        display: none;
+    }
+    .pac-item-query {
+        font-size: 15px;
+        font-family: ProximaRegular;
+    }
+    .pac-item:hover {
+        background-color: $color-highlight;
+    }
+    .pac-logo:after {
+        display: none;
+    }
+    .pac-matched {
+        font-weight: 700;
+    }
+}
+.modal-body{
+    padding: 0 30px;
+}
+.modal {
+    text-align: center;
+    padding: 0!important;
+}
+.modal::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+.loader-image {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    /* height: 1080px; */
+    background-color: #fff;
+    z-index: 10000;
+    opacity: 0.8;
+ img {     
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;    
+    }
+}
+
+section {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.wrapper {
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+}
+.show-for-sr {
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+}
+
+//Colors
+.black {
+    color: $color-black;
+}
+.white {
+    color: $color-white;
+}
+.white-off {
+    color: $color-white-off;
+}
+.grey-light {
+    color: $color-grey-light;
+}
+.grey-medium-light {
+    color: $color-grey-medium-light;
+}
+.grey-blue {
+    color: $color-grey-blue;
+}
+.grey-medium {
+    color: $color-grey-medium;
+}
+.grey-dark {
+    color: $color-grey-dark;
+}
+.blue-light {
+    color: $color-blue-light;
+}
+.blue {
+    color: $color-blue;
+}
+.blue-steel {
+    color: $color-blue-steel;
+}
+.navy {
+    color: $color-navy;
+}
+.highlight {
+    color: $color-highlight;
+}
+.red {
+    color: $color-red;
+}
+.red-light {
+    color: $color-red-light;
+}
+.green {
+    color: $color-green;
+}
+.green-light {
+    color: $color-green-light;
+}
+.terracotta {
+    color: $color-terracotta;
+}
+.shadow {
+    color: $color-shadow;
+}
+.tooltip {
+    color: $color-tooltip;
+}
+//Background Colors
+.bg-black {
+    background-color: $color-black;
+}
+.bg-white {
+    background-color: $color-white;
+}
+.bg-white-off {
+    background-color: $color-white-off;
+}
+.bg-grey-light {
+    background-color: $color-grey-light;
+}
+.bg-grey-medium-light {
+    background-color: $color-grey-medium-light;
+}
+.bg-grey-blue {
+    background-color: $color-grey-blue;
+}
+.bg-grey-medium {
+    background-color: $color-grey-medium;
+}
+.bg-grey-dark {
+    background-color: $color-grey-dark;
+}
+.bg-blue-light {
+    background-color: $color-blue-light;
+}
+.bg-blue {
+    background-color: $color-blue;
+}
+.bg-blue-steel {
+    background-color: $color-blue-steel;
+}
+.bg-navy {
+    background-color: $color-navy;
+}
+.bg-highlight {
+    background-color: $color-highlight;
+}
+.bg-red {
+    background-color: $color-red;
+}
+.bg-red-light {
+    background-color: $color-red-light;
+}
+.bg-green {
+    background-color: $color-green;
+}
+.bg-green-light {
+    background-color: $color-green-light;
+}
+.bg-terracotta {
+    background-color: $color-terracotta;
+}
+.bg-transparent {
+    background: transparent;
+}
+.bg-shadow {
+    background-color: $color-shadow;
+}
+.bg-tooltip {
+    background-color: $color-tooltip;
+}
+//Gradients
+.grad-blue {
+    @include grad($color-blue, $color-blue);
+}
+.grad-navy {
+    @include grad($color-navy, $color-blue-steel);
+}
+.grad-grey {
+    @include grad($color-white-off, $color-white);
+}
+.grad-final {
+    @include grad($color-cyan-dark, $color-cyan-soft);
+}
+.grad-pending {
+    @include grad($color-vivid-orange, $color-soft-orange);
+}
+.grad-unknown {
+    @include grad($color-grey-medium-light, $color-grey-light);
+}
+// Disable page scrolling while Reveal modals are open on mobile
+html.is-reveal-open-mobile,
+html.is-reveal-open-mobile body {
+    position: fixed;
+}
+//Error message styling
+.error-msg{
+    font-size: 15px;
+    font-family: Arial;
+    color: $color-red;
+    padding: 6px 0px 0px 9px;
+    width: 92%;
+}
+//h1 tag(heading) styling
+.title{
+    font-family: Century Gothic, ProximaRegular;
+    font-weight: 400;
+    letter-spacing: .01em;
+    font-size: 30px;
+    color: $color-blue;
+    text-align: center;
+    padding-bottom: 10px;
+    line-height: 42px;
+}
+.heading-main {
+    color: $color-white;
+    font-size: 40px;
+    line-height: 42px;
+    padding-top: 5px;
+    padding-bottom: .9rem;
+    @include up-to('desktop') {
+        font-size: 30px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    @include up-to('tablet'){
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+}
+@media (min-width: 1024px) {
+    .title{
+        font-size: 40px;
+        padding-bottom: .625rem;
+        line-height: 52px;
+    } 
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="163" height="8" viewBox="0 0 163 8">
+  <g>
+    <path style="fill-rule: evenodd;" fill="#eaeaea" d="M4.000,-0.000 L159.000,-0.000 C161.209,-0.000 163.000,1.791 163.000,4.000 C163.000,6.209 161.209,8.000 159.000,8.000 L4.000,8.000 L4.000,-0.000 Z" class="cls-1"/>
+    <rect fill="#0082ca" x="82" width="40" height="8" class="cls-2"/>
+    <path style="fill-rule: evenodd;" fill="#0082ca" d="M123.000,-0.000 L159.000,-0.000 C161.209,-0.000 163.000,1.791 163.000,4.000 C163.000,6.209 161.209,8.000 159.000,8.000 L123.000,8.000 L123.000,-0.000 Z" class="cls-3"/>
+    <rect fill="#0082ca" x="41" width="40" height="8" class="cls-2"/>
+    <path style="fill-rule: evenodd;" fill="#0082ca" d="M4.000,-0.000 L40.000,-0.000 L40.000,8.000 L4.000,8.000 C1.791,8.000 0.000,6.209 0.000,4.000 C0.000,1.791 1.791,-0.000 4.000,-0.000 Z" class="cls-3"/>
+  </g>
+</svg>

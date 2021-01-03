@@ -1,0 +1,85 @@
+<div class="app-search">
+  <h1 tabindex="0">
+    <a routerLink="/">
+      <app-svg-icon class="svg-white" id="icon-arrow-left"></app-svg-icon>
+    </a>{{provider_title}}</h1>
+  <button *ngIf="SelectPlanButton" role="button" (click)="selectPlan(showPlan)" class="btn btn-primary select-plan">{{selectSubPlanName}}
+    <app-svg-icon id="icon-arrow-right-sm"></app-svg-icon>
+  </button>
+  <div class="app-search-radio">
+    <app-radio-button [radios]="options" (changePlaceholder)="handleOutput($event)"></app-radio-button>
+  </div>
+  <form name="app-search">
+    <div class="app-search-speciality">
+      <div [ngStyle]="{'display': showSearchContent ? 'none' : 'block' }" class="search-icon"></div>
+      <div class="dropdown-list" [hidden]="showhideboxes" *ngIf="specialityObj">
+        <app-dropdown [specialities]=specialityObj (speciality_selected)="enableSearchBtn($event)"></app-dropdown>
+      </div>
+      <input name="textfield" class="name-textbox" type="text" [hidden]="!showhideboxes" [(ngModel)]="specialityDropdown" placeholder="{{placeholder_textfield}}"
+        (input)="searchBoxChange($event)" />
+      <button id="searchBtn" #searchBtn_ele type="button" role="button" (click)="searchCriteria()" [ngClass]="(isSearchValid) ? 'button_enabled' : 'button_disabled'">Search</button>
+      <div class="error-msg" *ngIf="searchResultError" [hidden]="!showSearchErrMsg">
+        <p>
+          <span>Please enter a valid {{providerType}} Type</span>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="pharmacies" *ngIf="providerType === 'pharmacies'">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 medicare-eligible">
+        <div class="medicare">
+          <p class="heading-sub white">Medicare Eligible</p>
+          <a href="{{absoluteURLs.SEARCH_PHARM_DIREC}}" class="body-regular white" gtm-track-click="{'eventCategory': 'Find a Doctor','eventAction': 'Search Pharmcies Secondary Links','eventLabel': 'Meicare Eligible: Search Pharmacy Directory','eventNonInteraction': 'false','event': 'eventTracker'}">Search Pharmacy Directory</a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 other-services">
+        <div class="medicare">
+          <p class="heading-sub white">Other services</p>
+          <a href="{{absoluteURLs.MAIL_SERVICE}}" target="_blank" class="body-regular white" gtm-track-click="{'eventCategory': 'Find a Doctor','eventAction': 'Search Pharmcies Secondary Links','eventLabel': 'Other Services: Mail-Service Prescriptions','eventNonInteraction': 'false','event': 'eventTracker'}">Mail-Service Prescriptions</a>
+          <br>
+          <a href="{{absoluteURLs.NETWORK_SPECIALTY}}" target="_blank" class="body-regular white" gtm-track-click="{'eventCategory': 'Find a Doctor','eventAction': 'Search Pharmcies Secondary Links','eventLabel': 'Other Services: Network Specialty Pharmacies','eventNonInteraction': 'false','event': 'eventTracker'}">Network Speciality Pharmacies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #showPlan>
+  <app-modal [templateName]="'defaultModal'" [modalRef]="openModal" [templateContent]=" 'choose_plan_modal' | langtranslate "></app-modal>
+</ng-template>
+
+<div class="search-filter-map" *ngIf="searchResultsFilterMap">
+  <div id="affix_el" #affix_el class="searchDetails text-center">
+    <p class="scrollMsgBox">
+      <span>{{search_results}}</span>
+      <span> {{search_name}}</span> {{providerType}} were found within
+      <a (click)="showFilterSortOptions()">5 Miles</a> of
+      <a (click)="showFilterSortOptions()">{{location}}</a>
+    </p>
+    <app-filtersort></app-filtersort>
+  </div>
+  <div class="provider_results_container row">
+    <div class="provider-result-list">
+      <div class="tab-content">
+        <div id="resultList" class="tab-pane active col-sm-12 col-lg-6">
+          <app-resultlist></app-resultlist>
+          <div class="pagination provider_search_desktop">
+            <app-pagination></app-pagination>
+          </div>
+        </div>
+        <div id="mapView" class="search-map-google hidden-map col-sm-12 col-lg-6 tab-pane">
+          <app-google-map></app-google-map>
+        </div>
+        <div class="pagination provider_search_mobile">
+          <app-pagination></app-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading_image" class="loader-image">
+  <img src="../../assets/images/ring-alt.gif" alt="loading">
+</div>
